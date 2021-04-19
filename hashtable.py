@@ -5,9 +5,13 @@ class Hashtable:
         for i in range(initial_capacity):
             self.map.append([])
 
+    # Initialize the hashing function
+    # O(1)
     def hash_func(self, key):
         return key % len(self.map)
 
+    # Set the size
+    # O(n)
     def size(self):
         num = 0
         for x in range(10):
@@ -17,7 +21,7 @@ class Hashtable:
         return num
 
     # Inserts a new item into the hash table.
-
+    # O(1)
     def insert(self, key, item):  # does both insert and update
         # get the bucket list where this item will go.
         bucket = self.hash_func(key)
@@ -25,7 +29,7 @@ class Hashtable:
 
     # Searches for an item with matching key in the hash table.
     # Returns the item if found, or None if not found.
-
+    # O(log n)
     def search(self, key):
         # get the bucket list where this key would be.
         bucket = self.hash_func(key)
@@ -41,7 +45,7 @@ class Hashtable:
             return None
 
     # Removes an item with matching key from the hash table.
-
+    # O(log n)
     def remove(self, key):
         # get the bucket list where this item will be removed from.
         bucket = self.hash_func(key)

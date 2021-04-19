@@ -11,9 +11,7 @@ class Package(object):
         self.status = "At the hub"
         self.time = "N/A"
 
-    def get_address(self):
-        return self.address
-
+    # Prints the total information of the package
     def print_package(self):
         print("ID: %i|Address: %s|City: %s|State: %s|Zip Code: %s|Due By: %s|Weight: %s|Message: %s|Status: "
               "%s|Delivered At: %s "
